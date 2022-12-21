@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:23:39 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/19 17:39:13 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/21 20:38:42 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,31 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	dest = (unsigned char *) dst;
 	source = (unsigned char *) src;
-	while (len > 0)
+	if (dest < source)
 	{
-		*dest = *source;
-		dest++;
-		source++;
-		len--;
+		return (ft_memcpy(dest, source, len));
 	}
+	else
+	{
+		while (len--)
+		{
+			dest[len] = source[len];
+		}
+	}		
 	return (dest);
 }
 
 //int main () {
-//   char dest[] = "holas";
-//   const char src[]  = "adios";
+//   char dest[] = "hola";
+//   const char src[]  = "mierda funciona";
 //
 //   printf("Before memmove:\n dest = %s, src = %s\n\n", dest, src);
 //   memmove(dest, src, 3);
 //   printf("After memmove:\n dest = %s, src = %s\n\n", dest, src);
 //
 //   ft_memmove(dest, src, 3);
-//   printf("From my function, after memmove:\n 
-//		dest = %s, src = %s\n\n", dest, src);
+//   printf("From my function, 
+//	after memmove:\n dest = %s, src = %s\n\n", dest, src);
 //
 //   return(0);
 //}

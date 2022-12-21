@@ -6,13 +6,13 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:22:38 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/19 17:45:27 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/21 19:32:02 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {	
 	unsigned char	*dest;
 	unsigned char	*source;

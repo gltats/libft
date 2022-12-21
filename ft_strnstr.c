@@ -6,24 +6,24 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:23:45 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/19 13:26:45 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/21 19:34:45 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *bg, const char *sm, size_t len)
 {
 	size_t	i;
 	size_t	j;
 	char	*small;
 	char	*big;
 
-	small = (char *)needle;
-	big = (char *)haystack;
+	small = (char *)sm;
+	big = (char *)bg;
 	i = 0;
 	if (small[0] == '\0')
-		return ((char *) haystack);
+		return ((char *) bg);
 	while (big[i] && i <= len)
 	{
 		j = 0;
