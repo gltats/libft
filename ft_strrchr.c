@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 08:17:49 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/23 20:37:29 by tgomes-l         ###   ########.fr       */
+/*   Created: 2022/12/23 22:00:42 by tgomes-l          #+#    #+#             */
+/*   Updated: 2022/12/24 18:17:04 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//function computes the length of the string s.
-
-size_t	ft_strlen(char *str)
+//The strrchr() function locates the last occurrence of c.
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	count;
+	int		i;
+	char	*letter;
 
-	count = 0;
-	while (str[count])
+	letter = (char *)s;
+	i = ft_strlen(letter);
+	while (i >= 0)
 	{
-		count++;
+		if (s[i] == c)
+		{
+			letter = (char *)&s[i];
+			return (letter);
+		}
+		i--;
 	}
-	return (count);
+	return (0);
 }
 
-//int main(void)
-//{
-//	char *test = "Something to test";
-//	char *test1 ="";
-//	char *test2 ="Something \0";
-//
-//	printf("The first size: %d\n", ft_strlen(test));
-//	printf("The second size: %d\n", ft_strlen(test1));
-//	printf("The third size: %d\n", ft_strlen(test2));
-//}
+// int main()
+// {
+// 	char	str[] = "Hello World";
+// 	printf("%s\n", ft_strrchr(str, ' '));
+// 	printf("%s", strrchr(str, ' '));
+// }

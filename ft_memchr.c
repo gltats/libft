@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 16:18:05 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/21 20:29:36 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/22 17:07:12 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		if (str[i] == ch)
 			return (&str[i]);
 		i++;
-		n--;
 	}
 	return (0);
 }

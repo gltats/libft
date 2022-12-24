@@ -5,46 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 08:13:52 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/17 14:56:05 by tgomes-l         ###   ########.fr       */
+/*   Created: 2022/12/23 18:55:57 by tgomes-l          #+#    #+#             */
+/*   Updated: 2022/12/23 21:25:07 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//appends string src to the end of dst.
-char	*ft_strcat(char *dest, char *src)
+size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
 {
-	int	x;
-	int	y;
+	size_t	c;
+	size_t	d;
 
-	x = 0;
-	y = 0;
-	while (dest[x])
+	c = ft_strlen(dst);
+	d = 0;
+	if (dstsize <= ft_strlen(dst))
+		return (dstsize + ft_strlen(src));
+	while (src[d] && c + 1 < dstsize)
 	{
-		x++;
+		dst[c] = src[d];
+		c++;
+		d++;
 	}
-	while (src[y])
-	{
-		dest[x] = src[y];
-		x++;
-		y++;
-	}
-	dest[x] = '\0';
-	return (dest);
+	dst[c] = '\0';
+	return (ft_strlen(dst) + ft_strlen(&src[d]));
 }
 
-//int main(void)
-//{
-//	char src[] = "Append this :)";
-//	char dest[] = "To this";
-//	int i =0, j = 0;
-//	while (src[i] != '\0') i++;
-//	while (dest[j] != '\0') j++;
-//	printf("The total length should be %d\n", i+j);
-//	write(1, ft_strcat(dest, src), i+j);
-//	write(1,"\n",1);
-//	j = 0;
-//	while (dest[j] != '\0') j++;
-//	printf("The total length is %d\n", j);
-//}
+// int main(void)
+// {
+// 	char *src = "hello"; 
+//     char dest[17];  
+//     printf("Dest: \"%s\"\n", dest); 
+//     ft_strlcat(dest, src, sizeof(dest)); 
+//     printf("After function:\n Dest: \"%s\"\n", dest); 
+//     return 0;
+// }

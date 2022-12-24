@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 15:08:11 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/21 20:39:54 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/24 18:16:29 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int				ft_isalpha(int x);
 int				ft_isascii(int x);
 int				ft_isdigit(int x);
 int				ft_isprint(int x);
+int				ft_count(long int i);
+char 			*ft_itoa(int n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
@@ -35,10 +37,15 @@ void			ft_putendl_fd(char *s, int fd);
 void			ft_putnr_fd(int n, int fd);
 void			ft_putstr_fd(char *s, int fd);
 char			*ft_strchr(const char *s, int c);
-char			*ft_strcat(char *dest, char *src);
+char 			*ft_strdup(char *s1);
+char			*ft_strjoin(char const *s1, char const *s2);
+size_t			ft_strlcat(char *dst, char *src, size_t dstsize);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
-int				ft_strlen(char *str);
+size_t			ft_strlen(char *str);
 int				ft_strncmp(char *s1, char *s2, unsigned int n);
+char			*ft_strnstr(const char *bg, const char *sm, size_t len);
+char			*ft_strrchr(const char *s, int c);
+char 			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_islowercase(int c);
 char			*ft_strnstr(const char *bg, const char *sm, size_t len);
 int				ft_tolower(int c);

@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:22:38 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/21 19:32:02 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/22 17:01:50 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,31 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {	
-	unsigned char	*dest;
-	unsigned char	*source;
+	char	*dest;
+	char	*source;
 
-	dest = (unsigned char *) dst;
-	source = (unsigned char *) src;
-	while (n > 0)
+	dest = (char *) dst;
+	source = (char *) src;
+	while (n--)
 	{
 		*dest = *source;
 		dest++;
 		source++;
-		n--;
 	}
-	return (dest);
+	return (dst);
 }
 
-//int main()  
+// int main()  
 //  {   
-//	char dest[ 50 ];
-//	char src[ ] = "Hola";
-//
-//	printf("dest= %s\n", dest);
-//	printf("src= %s\n", src);
-//
-//	ft_memcpy(dest, src, strlen(src) + 1);
-//	printf("ft function displays my beautiful dest: %s\n", dest);
-//		  
-//	memcpy(dest, src, strlen(src) + 1);
-//	printf("real function displays dest: %s\n", dest);
-//
+// 	char dest[ 50 ];
+// 	char src[ ] = "Hola";
+
+// 	printf("dest= %s\n", dest);
+// 	printf("src= %s\n", src);
+
+// 	ft_memcpy(dest, src, strlen(src) + 1);
+// 	printf("ft function displays my beautiful dest: %s\n", dest);	  
+// 	memcpy(dest, src, strlen(src) + 1);
+// 	printf("real function displays dest: %s\n", dest);
+
 // }
