@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 15:08:11 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/24 18:16:29 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/26 16:04:27 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnr_fd(int n, int fd);
 void			ft_putstr_fd(char *s, int fd);
+int				counter(char *str, char c);
+char			**ft_split(char *s, char c);
 char			*ft_strchr(const char *s, int c);
 char 			*ft_strdup(char *s1);
 char			*ft_strjoin(char const *s1, char const *s2);
