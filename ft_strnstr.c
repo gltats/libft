@@ -6,15 +6,12 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:23:45 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/31 16:16:54 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/21 19:34:45 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//This is a C function that searches for the first occurrence of the 
-//null-terminated string sm in the null-terminated string bg, 
-//but with a maximum number of len characters. 
 char	*ft_strnstr(const char *bg, const char *sm, size_t len)
 {
 	size_t	i;

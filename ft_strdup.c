@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 16:40:42 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/30 19:51:38 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/31 19:36:16 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ char	*ft_strdup(char *s1)
 	size_t	i;
 
 	i = 0;
-	if (!s1)
-		return (0);
 	i = ft_strlen(s1) + 1;
 	dest = (char *)malloc(sizeof(char) * i);
 	if (!dest)

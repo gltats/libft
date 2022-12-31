@@ -6,14 +6,12 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 18:55:57 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/31 16:14:05 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/23 21:25:07 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//This function concatenates the null-terminated string src to the end of the 
-//null-terminated string dst, but with a maximum size of dstsize
 size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
 {
 	size_t	c;

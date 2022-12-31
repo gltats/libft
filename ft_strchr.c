@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:22:49 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/31 14:35:24 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/31 19:59:38 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (0);
+	unsigned char	ch;
+	
+	ch = c;
 	while (*s)
 	{
-		if ((unsigned char)*s == (unsigned char)c)
+		if ((char)*s == ch)
 			return ((char *)s);
 		s++;
 	}
-	if (c == 0)
+	if (ch == '\0')
 		return ((char *)s);
 	return (0);
 }
@@ -30,6 +31,6 @@ char	*ft_strchr(const char *s, int c)
 // int	main()
 // {
 // 	char	str[] = "teste";
-// 	printf("%s\n", ft_strchr(str, 'e'));
-// 	printf("%s", strchr(str, 'e'));
+// 	printf("%s\n", ft_strchr(str, 1024));
+// 	printf("%s\n", strchr(str, 1024));
 // }

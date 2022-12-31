@@ -6,15 +6,11 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:09:39 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/31 16:15:31 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/28 11:36:03 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-//This is a C function that applies a function f to each character of a 
-//null-terminated string s, and creates a new null-terminated string from 
-//the resulting characters.
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

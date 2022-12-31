@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:23:39 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/21 20:38:42 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/31 18:58:14 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	dest = (unsigned char *) dst;
 	source = (unsigned char *) src;
+	if (src == dest || len == 0)
+		return (dest);
 	if (dest < source)
 	{
 		return (ft_memcpy(dest, source, len));

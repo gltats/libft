@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:22:38 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/22 17:01:50 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/31 19:35:02 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	dest = (char *) dst;
 	source = (char *) src;
+	if (dest == source)
+		return (dest);
 	while (n--)
 	{
 		*dest = *source;

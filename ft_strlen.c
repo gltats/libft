@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:17:49 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/23 20:37:29 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/31 19:42:00 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 //function computes the length of the string s.
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	count;
+	char	*tempstr;
 
+	tempstr = (char *)str;
 	count = 0;
-	while (str[count])
+	while (tempstr[count])
 	{
 		count++;
 	}
