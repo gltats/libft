@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:15:31 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/17 15:13:40 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/30 17:28:44 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,42 +17,41 @@
 //comparing strings rather than binary data, characters that appear after a `\0'
 //character are not compared.
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	x;
 
 	x = 0;
-	while ((s1[x] || s2[x]) && x < n)
+	while ((s1[x] || s2[x]) && (x < n))
 	{
 		if (s1[x] != s2[x])
 		{
-			return (s1[x] - s2[x]);
+			return ((unsigned char)s1[x] - (unsigned char)s2[x]);
 		}
 	x++;
 	}
-	return (0);
+	if (x == n)
+		return (0);
+	return ((unsigned char)s1[x] - (unsigned char)s2[x]);
 }
 
-//#include <string.h>
-//#include <stdio.h>
-//
-//int main(void)
-//{
-//	char *first = "Hel";
-//	char *second = "Hel";
-//	int decision;
-//
-//	decision = strncmp(first, second, 5);
+// int main(void)
+// {
+// 	char *first = "hello";
+// 	char *second = "hella";
+// 	int decision;
+
+// 	decision = strncmp(first, second, 10);
 //    if (decision == 0) printf("They are equal\n");
 //    if (decision > 0) printf("First string is greater than second\n");
-//	if (decision < 0) printf("Second string is greater than first\n");
-//
-//	decision = ft_strncmp(first, second, 5);
-//	if (decision > 0)
-//		write(1, "First string is greater than second\n", 36);
-//	else 
-//	if (decision < 0)
-//		write(1, "Second string is greater than first\n", 36);
-//	else
-//		write(1, "They are equal\n", 15);
-//}
+// 	if (decision < 0) printf("Second string is greater than first\n");
+
+// 	decision = ft_strncmp(first, second, 10);
+// 	if (decision > 0)
+// 		write(1, "First string is greater than second\n", 36);
+// 	else 
+// 	if (decision < 0)
+// 		write(1, "Second string is greater than first\n", 36);
+// 	else
+// 		write(1, "They are equal\n", 15);
+// }

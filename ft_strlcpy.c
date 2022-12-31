@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:14:50 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/17 15:06:28 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/30 14:08:16 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,28 @@
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int	x;
-	int				length;
+	unsigned int	i;
 
-	x = 0;
-	length = 0;
-	while (src[length])
+	i = 0;
+	if (!size)
+		return (ft_strlen(src));
+	while (src[i] && (i < size - 1))
 	{
-		if (size != 0)
-		{
-			while (src[x] && x < size - 1)
-			{
-			dest[x] = src[x];
-			x++;
-			}
-		dest[x] = '\0';
-		}
-		length++;
+		dest[i] = src[i];
+		i++;
 	}
-	return (length);
+	dest[i] = 0;
+	return (ft_strlen(src));
 }
 
-//int main(void)
-//{
-//	char *src;
-//	unsigned int	size;
-//	char dest[10];
-//	
-//	size = 5;
-//	src = "working";
-//
-//	ft_strlcpy(dest,src,size);
-//	printf("%d\n", ft_strlcpy(dest, src, size));
-//	return(0);
-//	
-//}
+// int main(void)
+// {
+// 	char str1[20] = "Hello";
+// 	char str2[20];
+
+// 	// copying str1 to str2
+// 	ft_strlcpy(str2, str1, 3);
+// 	puts(str2);
+
+// 	return 0;	
+// }

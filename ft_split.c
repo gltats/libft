@@ -6,14 +6,14 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:09:28 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/26 16:57:50 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/31 14:59:34 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 //Counts the number of times c appears on str
-int counter(char *str, char c)
+static int	counter(char *str, char c)
 {
 	int		i;
 	int		counter;
@@ -30,11 +30,9 @@ int counter(char *str, char c)
 			i++;
 	}
 	return (counter);
-	
 }
 
-
-char **ft_split(char *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**splitted;
 	size_t	i;
@@ -61,13 +59,11 @@ char **ft_split(char *s, char c)
 	splitted[i] = 0;
 	return (splitted);
 }
-#include <stdlib.h>
 
 // int main() 
 // {
 // 	char	**tabstr;
 // 	int		i;
-	
 // 	tabstr = ft_split("       Hello world", ' ');
 // 		while (tabstr[i] != NULL)
 // 		{

@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 22:00:42 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/24 18:17:04 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/31 15:01:10 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(letter);
 	while (i >= 0)
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 		{
 			letter = (char *)&s[i];
 			return (letter);
@@ -34,7 +34,7 @@ char	*ft_strrchr(const char *s, int c)
 
 // int main()
 // {
-// 	char	str[] = "Hello World";
-// 	printf("%s\n", ft_strrchr(str, ' '));
-// 	printf("%s", strrchr(str, ' '));
+// 	char	str[] = "tripouille";
+// 	printf("%s\n", ft_strrchr(str, 't' + 256));
+// 	printf("%s", strrchr(str, 't' + 256));
 // }

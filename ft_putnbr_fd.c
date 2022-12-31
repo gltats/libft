@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_putnr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	long	ln;
 
@@ -28,8 +28,8 @@ void	ft_putnr_fd(int n, int fd)
 	}
 	else if (ln > 9)
 	{
-		ft_putnr_fd(ln / 10, fd);
-		ft_putnr_fd(ln % 10, fd);
+		ft_putnbr_fd(ln / 10, fd);
+		ft_putnbr_fd(ln % 10, fd);
 	}
 }
 
@@ -62,6 +62,6 @@ void	ft_putnr_fd(int n, int fd)
 	//}
 	//else if (n > 9)
 	//{
-	//	ft_putnr_fd(n / 10, fd);
-	//	ft_putnr_fd(n % 10,fd);
+	//	ft_putnbr_fd(n / 10, fd);
+	//	ft_putnbr_fd(n % 10,fd);
 	//}

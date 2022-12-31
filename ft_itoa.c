@@ -6,60 +6,58 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:09:11 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/23 17:07:28 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/31 13:49:19 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count(long int i)
+static int	ft_count(int n)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	if (i < 0)
+	i = 0;
+	if (n <= 0)
+		i = 1;
+	while (n)
 	{
-		i = i * -1;
-		count++;
+		n /= 10;
+		++i;
 	}
-	while (i > 0)
-	{
-		i = i / 10;
-		count++;
-	}
-	return (count);
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*str;
-	long	nb;
-	int		i;
+	int		len;
 
-	nb = n;
-	i = ft_count(nb);
-	str = malloc(i * sizeof(char) + 1);
+	len = ft_count(n);
+	str = ft_calloc(len + 1, sizeof(char));
 	if (!str)
 		return (0);
-	str[i--] = '\0';
-	if (nb == 0)
-		str[0] = 48;
+	if (n == 0)
+		str[0] = '0';
 	if (n < 0)
 	{
 		str[0] = '-';
-		nb = nb * -1;
+		if (n == -2147483648)
+		{
+			str[--len] = '8';
+			n /= 10;
+		}
+		n = -n;
 	}
-	while (nb > 0)
+	while (len-- && n != 0)
 	{
-		str[i] = 48 + (nb % 10);
-		nb = nb / 10;
-		i--;
+		str[len] = (n % 10) + '0';
+		n /= 10;
 	}
 	return (str);
 }
 
 // int main(void)
 // {
-// 	printf("%s\n", ft_itoa(854876));
+// 	printf("%s\n", ft_itoa(0));
 // 	return (0);
 // }

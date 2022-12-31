@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 08:22:49 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/31 14:35:24 by tgomes-l         ###   ########.fr       */
+/*   Created: 2022/12/18 17:11:13 by tgomes-l          #+#    #+#             */
+/*   Updated: 2022/12/30 12:59:34 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
-{
-	if (!s)
-		return (0);
-	while (*s)
-	{
-		if ((unsigned char)*s == (unsigned char)c)
-			return ((char *)s);
-		s++;
-	}
-	if (c == 0)
-		return ((char *)s);
-	return (0);
-}
+// Deletes and frees the given element and every successor of that element,
+// using the function ’del’ from "ft_lstdelone".
 
-// int	main()
-// {
-// 	char	str[] = "teste";
-// 	printf("%s\n", ft_strchr(str, 'e'));
-// 	printf("%s", strchr(str, 'e'));
-// }
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list	*tmp;
+
+	if (lst)
+	{
+		while (*lst)
+		{
+			tmp = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			(*lst) = tmp;
+		}
+	}
+}

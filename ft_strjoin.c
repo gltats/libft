@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:09:36 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/23 17:30:32 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/30 18:50:46 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,24 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*dest;
-	char	*source;
-	char	*st1;
-	char	*st2;
+	size_t	len1;
+	size_t	len2;
+	char	*pnt1;
+	char	*pnt2;
+	char	*result;
 
-	st1 = (char *)s1;
-	st2 = (char *)s2;
-	if (!st1 || !st2)
+	pnt1 = (char *) s1;
+	pnt2 = (char *) s2;
+	if (!s1 || !s2)
 		return (0);
-	dest = (char *)malloc(sizeof(dest) * (ft_strlen(st1) + ft_strlen(st2)));
-	source = dest;
-	while (*st1)
-	{
-		*dest++ = *st1++;
-	}
-	while (*st2)
-	{
-		*dest++ = *st2++;
-	}
-	return (source);
+	len1 = ft_strlen(pnt1);
+	len2 = ft_strlen(pnt2);
+	result = malloc(len1 + len2 + 1);
+	if (!result)
+		return (0);
+	ft_strcpy (result, pnt1);
+	ft_strcpy (result + len1, pnt2);
+	return (result);
 }
 
 // int		main(void)
@@ -41,7 +39,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // 	char	*s1 = "Tatiana";
 // 	char	*s2 = "Sofia";
 // 	char	*strjoin;
-
 // 	if (!(strjoin = ft_strjoin(s1, s2)))
 // 			return(0);
 // 	else

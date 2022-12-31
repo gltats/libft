@@ -6,12 +6,15 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:09:45 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/23 17:13:59 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/31 16:18:21 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//This is a C function that creates a new null-terminated string that is a 
+//substring of a given null-terminated string s, starting from the start-th 
+//character and with a length of len characters.
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;

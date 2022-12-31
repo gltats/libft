@@ -6,7 +6,7 @@
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 16:40:42 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/24 15:22:34 by tgomes-l         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:51:38 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char	*ft_strdup(char *s1)
 // {
 //     char *source = "Hello World";
 //     char* dest = ft_strdup(source);
-//     printf("Destination -> %s", dest);
+//     printf("Destination -> %s\n", dest);
+// 	printf("Destination -> %s\n", ft_strdup("Hello World"));
 //     return 0;
-// }
+// }	

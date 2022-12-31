@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgomes-l <tgomes-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 08:22:49 by tgomes-l          #+#    #+#             */
-/*   Updated: 2022/12/31 14:35:24 by tgomes-l         ###   ########.fr       */
+/*   Created: 2022/12/18 17:09:32 by tgomes-l          #+#    #+#             */
+/*   Updated: 2022/12/28 14:21:25 by tgomes-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (!s)
-		return (0);
-	while (*s)
+	int	i;
+
+	i = 0;
+	if (s && f)
 	{
-		if ((unsigned char)*s == (unsigned char)c)
-			return ((char *)s);
-		s++;
+		while (s[i])
+		{
+			(*f)(i, &s[i]);
+			i++;
+		}
 	}
-	if (c == 0)
-		return ((char *)s);
-	return (0);
+	return ;
 }
 
-// int	main()
+// void test(unsigned int i, char *c)
 // {
-// 	char	str[] = "teste";
-// 	printf("%s\n", ft_strchr(str, 'e'));
-// 	printf("%s", strchr(str, 'e'));
+// 	char *str;
+// 	*str = *c + 1;
+// }
+// int main(void)  
+// {
+//    	char	*str;
+// 	str = (char *)malloc(sizeof(*str) * 12);
+// 	strcpy(str, "abc");
+// 	ft_striteri(str, &test);
+// 	printf("%s", str);
+// 	return (0);
 // }
