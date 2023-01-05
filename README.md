@@ -4,7 +4,8 @@ Libft has been created for the Core curses at 42 Wolfsburg.
 The intention is to create a library of functions.
 
 ## Status:
-- Actual status:  Submitted.
+- Actual status:  finished.\
+- Result : 125%
 
 ## Technical considerations:
 • Declaring global variables is forbidden.
