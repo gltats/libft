@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-//Counts the number of times c appears on str
 static int	counter(char *str, char c)
 {
 	int		i;
